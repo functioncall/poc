@@ -36,6 +36,8 @@ let sanitizeRecord = function (queryObject) {
   }
 
 let displayResult = (records) => {
+    console.log("Recommendation count: " + records.length)
+
     records.forEach(record => {
         console.log('=>', record)
     });

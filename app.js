@@ -18,7 +18,6 @@ let getRecommendations = () => {
       return getAllRecords(snapshot, allRecords)
     })
     .then(() => {
-      console.log("Total records found: " + allRecords.length)
       return getPopularRecords(allRecords, popularRecords)
     })
     .then(() => {
@@ -31,7 +30,6 @@ let getRecommendations = () => {
       return combineRecords(popularRecords, unpopularRecords)
     })
     .then((result) => {
-      console.log("Recommendation count: " + result.length)
       return utils.displayResult(result)
     })
     .catch((err) => {
@@ -56,6 +54,7 @@ let getAllRecords = (snapshot, allRecords) => {
   snapshot.forEach(doc => {
     allRecords.push(utils.sanitizeRecord(doc));
   });
+  console.log("Total records found: " + allRecords.length)
 }
 
 /**
@@ -358,7 +357,12 @@ let setEngagementScore = (collectionName) => {
   return score
 }
 
-const db = firebaseDao.initializeFirebaseDb()
 
+
+/**
+ * 
+ */
+
+const db = firebaseDao.initializeFirebaseDb()
 
 getRecommendations()
