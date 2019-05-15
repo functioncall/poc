@@ -3,8 +3,9 @@
 let config = require('./common/configurations');
 let constants = require('./common/constants')
 let utils = require('./common/utils');
-let firebaseDao = require('./modules/firebaseDao')
+let firebaseDao = require('./modules/firebaseDao');
 let engagementConfig = constants.engagementConstants;
+
 
 let getRecommendations = () => {
     const records = 'records'
@@ -358,11 +359,12 @@ let setEngagementScore = (collectionName) => {
 }
 
 
-
 /**
- * 
+ * Create firebase db instance
  */
-
 const db = firebaseDao.initializeFirebaseDb()
 
+/**
+ * Get records from here
+ */
 getRecommendations()
