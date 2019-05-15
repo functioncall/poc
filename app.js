@@ -94,7 +94,7 @@ let getPopularPosts = (allRecords, popularRecords) => {
       if (isPostPopular(record)) 
         popularRecords.push(record)
       })
-
+    console.log()
     console.log("Popular records found: " + popularRecords.length)
     resolve(popularRecords) 
     })
@@ -188,7 +188,7 @@ let getEngagedUsersPost = (engagedUsersPost, engagement, popularRecords) => {
     } // inner loop closes here
   } // outer loop closes here
 
-  console.log('engagedUsersPost found: ' + engagedUsersPost.length)
+  console.log('Engaged Users Post found in popular records: ' + engagedUsersPost.length)
   return engagedUsersPost
 }
 
@@ -215,7 +215,7 @@ let getUnengagedUsersPost = (unengagedUsersPost, engagedUsersPost, popularRecord
     }) // inner loop closes here
   }) // outer loop closes here
 
-  console.log('unengagedUsersPost found: ' + unengagedUsersPost.length)
+  console.log('Unengaged Users Post found in popular records: ' + unengagedUsersPost.length)
   return unengagedUsersPost
 }
 
