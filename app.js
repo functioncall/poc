@@ -43,7 +43,7 @@ let getRecommendations = () => {
  * @param {*} collectionName 
  */
 let getCollection = (collectionName) => {
-  return db.collection(collectionName).get()
+  return db.collection(collectionName).orderBy('created_at','desc').get()
 }
 
 /**
@@ -243,7 +243,7 @@ let getEngagedUsers = () => {
   }).then((engagement) => {
     return filterUser(engagement)
   }).then((engagement) => {
-    return engagement // needed?
+    return engagement
   }).catch((err) => {
     console.log(err.stack)
   })

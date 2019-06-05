@@ -1,7 +1,7 @@
 
 
 const configuration = {
-    serviceAccountKey               : '/Users/shekhar/.ssh/nao-holoash-231807-1a49e31c93e0.json',
+    serviceAccountKey               : '<Add service account json path>',
 
     recommendationThreshold         : 20,
     popularPostPercentage           : 0.7,
